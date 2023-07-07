@@ -1,0 +1,11 @@
+body{
+    width: 100vw;
+    overflow-x: hidden;
+}
+canvas{
+border: 2px dashed blue;
+height:800px;
+width:800px;
+margin-left: calc(50% - 400px);
+margin-top:40px;
+}
