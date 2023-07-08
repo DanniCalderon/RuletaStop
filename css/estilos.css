@@ -3,9 +3,30 @@ body{
     overflow-x: hidden;
 }
 canvas{
-border: 2px dashed blue;
+/*border: 2px dashed blue;*/
 height:800px;
 width:800px;
 margin-left: calc(50% - 400px);
 margin-top:40px;
+}
+h1{
+    text-align: center;
+    font-style: italic;
+    background-color: black;
+    color: white;
+    width: 50%;
+    margin-left: calc(50% - 25%);
+    border-radius: 8px;
+}
+body{
+background-color: blanchedalmond;
+}
+input{
+    width: 20%;
+    background-color: orangered;
+    font-weight: 900;
+    margin-left: calc(50% - 10%);
+    border-radius: 8px;
+    
+
 }
