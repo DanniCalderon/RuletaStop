@@ -1,13 +1,7 @@
 body{
     width: 100vw;
     overflow-x: hidden;
-}
-canvas{
-/*border: 2px dashed blue;*/
-height:800px;
-width:800px;
-margin-left: calc(50% - 400px);
-margin-top:40px;
+    background-color: blanchedalmond;
 }
 h1{
     text-align: center;
@@ -18,15 +12,30 @@ h1{
     margin-left: calc(50% - 25%);
     border-radius: 8px;
 }
-body{
-background-color: blanchedalmond;
+#containerBtn{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: calc(50% - 400px);
+    border: 2px dashed blueviolet;
+    width: 800px;
+    height: 800px;
 }
 input{
-    width: 20%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+    border: 10px solid white;
     background-color: orangered;
     font-weight: 900;
-    margin-left: calc(50% - 10%);
-    border-radius: 8px;
-    
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-left: calc(50% - 75px);
+    margin-top: calc(50% - 75px);
+}
+canvas{
+border: 2px dashed blue;
+height:800px;
+width:800px;
+margin-left: calc(50% - 400px);
+margin-top:40px;
 
 }
