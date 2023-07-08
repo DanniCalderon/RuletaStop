@@ -1,3 +1,4 @@
+var body = document.querySelector(".container");
 var miRuleta = new Winwheel({
     'numSegments': 27,
     'pointerAngle': 0,
@@ -35,16 +36,19 @@ var miRuleta = new Winwheel({
         { 'fillStyle': '#ffeaa7', 'text': " X  x" },
         { 'fillStyle': '#fab1a0', 'text': " Y  y" },
         { 'fillStyle': '#ff7675', 'text': " Z  z" }
-
-
     ],
     'animation': {
         'type': 'spinToStop',
-        'duration': 10,
+        'duration': 7,
         'callbackFinished': 'Mensaje()',
-        'callbackAfter': 'dibujarIndicador()'
+        'callbackAfter': 'dibujarIndicador()',
+        'spins': 7,
+        'callbackSound': playSound,
+        'soundTrigger': 'pin'
     },
-
+    'pins': {
+       'number':36,
+    },
     'pointerGuide':
     {
         'display': true,
@@ -53,13 +57,26 @@ var miRuleta = new Winwheel({
     }
 });
 
+let audio = new Audio('sound/tick.mp3');
+function playSound() {
+    audio.pause();
+    audio.currentTime = 0;
+    audio.play();
+
+}
+
 function Mensaje() {
+    var letra = document.querySelector(".letra");
+    var pop= document.querySelector(".popup");
     var SegmentoSeleccionado = miRuleta.getIndicatedSegment();
-    alert("Letra seleccionada:" + SegmentoSeleccionado.text + "!" + "  " + "QUE COMIENZE EL JUEGO");
-    miRuleta.stopAnimation(false);
-    miRuleta.rotationAngle = 0;
-    miRuleta.draw();
-    dibujarIndicador();
+    letra.innerHTML = SegmentoSeleccionado.text.split(' ').join('').charAt(0);
+    window.scroll({
+        top:  0,
+        left: 0,
+        behavior: 'smooth'
+    });
+    body.style.overflow = "hidden";
+    pop.style.display = "flex";
 }
 
 dibujarIndicador();
@@ -76,4 +93,15 @@ function dibujarIndicador() {
     ctx.stroke();
     ctx.fill();
 
+}
+
+function resetGame() {
+    var pop = document.querySelector(".popup");
+    body.style.overflow = "auto";
+    pop.style.display = "none";
+    miRuleta.stopAnimation(false);
+    miRuleta.deleteSegment(miRuleta.getIndicatedSegmentNumber());
+    miRuleta.rotationAngle = 0;
+    miRuleta.draw();
+    dibujarIndicador();
 }
