@@ -47,7 +47,7 @@ var miRuleta = new Winwheel({
         'soundTrigger': 'pin'
     },
     'pins': {
-       'number':36,
+    'number':36,
     },
     'pointerGuide':
     {
@@ -62,10 +62,13 @@ function playSound() {
     audio.pause();
     audio.currentTime = 0;
     audio.play();
-
 }
 
+
+
 function Mensaje() {
+    let audio2 = document.querySelector('#sonido2');
+    audio2.play();
     var letra = document.querySelector(".letra");
     var pop= document.querySelector(".popup");
     var SegmentoSeleccionado = miRuleta.getIndicatedSegment();
