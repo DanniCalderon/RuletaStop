@@ -67,7 +67,7 @@ margin-bottom: 150px;
     
 }
 .boton{
-  font-size: 20px;
+  font-size: 40px;
   color: #009943;
   padding: 0.7em 1.7em;
   border-radius:15px;
@@ -78,7 +78,6 @@ margin-bottom: 150px;
   cursor: pointer;
   width: 25%;
   font-weight:600;
-  font-size: 24px;
   }
 .boton:hover{
   box-shadow: -6px -6px 12px #0AC25A, 6px 6px 12px #51D88C;
