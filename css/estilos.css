@@ -46,11 +46,10 @@ color:#947700 ;
 border: 5px solid #F1C40F;
 border-radius: 16px;
 font-size: 250px;
-padding: 52px 100px;
-width: 170px;
+padding: 100px 150px;
 box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); 
-margin-bottom: 150px;
+margin:20px 0px ;
 }
 .popup{
     position: absolute;
@@ -69,16 +68,16 @@ margin-bottom: 150px;
 .boton{
   font-size: 40px;
   color: #009943;
-  padding: 0.7em 1.7em;
+  padding: 8px 100px;
   border-radius:15px;
   background-color: #ACF4CB;
   border: 1px solid #7EE7AC;
-  transition: all .3s;
+  transition: all 1s;
   box-shadow: 6px 6px 12px #0AC25A, -6px -6px 12px #51D88C; 
   cursor: pointer;
-  width: 25%;
   font-weight:600;
   }
 .boton:hover{
-  box-shadow: -6px -6px 12px #0AC25A, 6px 6px 12px #51D88C;
+  box-shadow: -6px -6px 12px #dd5eee, 6px 6px 12px #51D88C;
+  color: #dd5eee;
 }

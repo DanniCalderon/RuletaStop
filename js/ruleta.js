@@ -1,3 +1,5 @@
+var intentos = 27;
+var estado = false;
 var body = document.querySelector(".container");
 var miRuleta = new Winwheel({
     'numSegments': 27,
@@ -7,7 +9,7 @@ var miRuleta = new Winwheel({
     'textOrientation': 'vertical',
     'textAlignment': 'outer',
     'outerRadius': 380,
-    'innerRadius': 75,
+    'innerRadius': 0,
     'segments': [
         { 'fillStyle': '#55efc4', 'text': " A  a" },
         { 'fillStyle': '#81ecec', 'text': " B  b" },
@@ -35,7 +37,7 @@ var miRuleta = new Winwheel({
         { 'fillStyle': '#6c5ce7', 'text': " W  w" },
         { 'fillStyle': '#ffeaa7', 'text': " X  x" },
         { 'fillStyle': '#fab1a0', 'text': " Y  y" },
-        { 'fillStyle': '#ff7675', 'text': " Z  z" }
+        { 'fillStyle': '#ff7675', 'text': " Z  z" } 
     ],
     'animation': {
         'type': 'spinToStop',
@@ -47,7 +49,7 @@ var miRuleta = new Winwheel({
         'soundTrigger': 'pin'
     },
     'pins': {
-    'number':36,
+        'number': 36,
     },
     'pointerGuide':
     {
@@ -68,18 +70,22 @@ function playSound() {
 
 function Mensaje() {
     let audio2 = document.querySelector('#sonido2');
-    audio2.play();
     var letra = document.querySelector(".letra");
-    var pop= document.querySelector(".popup");
+    audio2.play();
+    var pop = document.querySelector(".popup");
     var SegmentoSeleccionado = miRuleta.getIndicatedSegment();
     letra.innerHTML = SegmentoSeleccionado.text.split(' ').join('').charAt(0);
     window.scroll({
-        top:  0,
+        top: 0,
         left: 0,
         behavior: 'smooth'
     });
     body.style.overflow = "hidden";
     pop.style.display = "flex";
+    var btnGirar = document.querySelector('#girar');
+    btnGirar.style.display = "none";
+    estado = false;
+
 }
 
 dibujarIndicador();
@@ -100,11 +106,35 @@ function dibujarIndicador() {
 
 function resetGame() {
     var pop = document.querySelector(".popup");
-    body.style.overflow = "auto";
-    pop.style.display = "none";
-    miRuleta.stopAnimation(false);
-    miRuleta.deleteSegment(miRuleta.getIndicatedSegmentNumber());
-    miRuleta.rotationAngle = 0;
-    miRuleta.draw();
-    dibujarIndicador();
+    console.log(intentos)
+    if (intentos == 2) {
+        var botton = document.querySelector(".botonFinal");
+        botton.addEventListener("click", function () {
+            window.location.reload();
+        } );
+        botton.value = "Reiniciar ruleta";
+        var letra = document.querySelector(".letra");
+        document.querySelector(".mensajeFinal").style.display = "block";
+        miRuleta.stopAnimation(false);
+        miRuleta.deleteSegment(miRuleta.getIndicatedSegmentNumber());
+        miRuleta.draw();
+        letra.innerHTML = "Z  z".split(' ').join('').charAt(0);
+        
+    } else {
+
+        if (estado == false) {
+            body.style.overflow = "auto";
+            pop.style.display = "none";
+            miRuleta.stopAnimation(false);
+            miRuleta.deleteSegment(miRuleta.getIndicatedSegmentNumber());
+            intentos = intentos - 1;
+            miRuleta.rotationAngle = 0;
+            miRuleta.draw();
+            dibujarIndicador();
+            miRuleta.startAnimation();
+            estado = true;
+        }
+
+
+    }
 }
