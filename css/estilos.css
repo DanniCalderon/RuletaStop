@@ -12,6 +12,7 @@ h1 {
     width: 50%;
     margin-left: calc(50% - 25%);
     border-radius: 8px;
+    padding: 20px 50px;
 }
 
 #containerBtn {
