@@ -1,9 +1,10 @@
-body{
+body {
     width: 100vw;
     overflow-x: hidden;
     background-color: blanchedalmond;
 }
-h1{
+
+h1 {
     text-align: center;
     font-style: italic;
     background-color: black;
@@ -12,18 +13,20 @@ h1{
     margin-left: calc(50% - 25%);
     border-radius: 8px;
 }
-#containerBtn{
+
+#containerBtn {
     position: absolute;
     margin-top: 40px;
     margin-left: calc(50% - 400px);
     width: 800px;
     height: 800px;
 }
-#girar{
+
+#girar {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
     border: 7px solid #F17B0F;
     background-color: #FFB36C;
-    color: #944700 ;
+    color: #944700;
     font-weight: 900;
     height: 150px;
     width: 150px;
@@ -32,52 +35,57 @@ h1{
     margin-top: calc(50% - 75px);
     font-size: 26px;
 }
-canvas{
-position: absolute;
-height:800px;
-width:800px;
-margin-left: calc(50% - 400px);
-margin-top:40px;
+
+canvas {
+    position: absolute;
+    height: 800px;
+    width: 800px;
+    margin-left: calc(50% - 400px);
+    margin-top: 40px;
 }
-.letra{
-text-align: center;
-background-color: #F9D543;
-color:#947700 ;
-border: 20px solid #F1C40F;
-border-radius: 40px;
-font-size: 250px;
-padding: 100px 150px;
-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
-text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); 
-margin:20px 0px ;
+
+.letra {
+    text-align: center;
+    background-color: #F9D543;
+    color: #947700;
+    border: 20px solid #F1C40F;
+    border-radius: 40px;
+    font-size: 250px;
+    padding: 100px 150px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    margin: 20px 0px;
 }
-.popup{
+
+.popup {
     position: absolute;
     width: 100vw;
-    height:100vh;
+    height: 100vh;
     top: 0px;
     left: 0px;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     display: none;
-    
+
 }
-.boton{
-  font-size: 40px;
-  color: #009943;
-  padding: 8px 100px;
-  border-radius:15px;
-  background-color: #ACF4CB;
-  border: 1px solid #7EE7AC;
-  transition: all 1s;
-  box-shadow: 6px 6px 12px #0AC25A, -6px -6px 12px #51D88C; 
-  cursor: pointer;
-  font-weight:600;
-  }
-.boton:hover{
-  box-shadow: -6px -6px 12px #dd5eee, 6px 6px 12px #51D88C;
-  color: #dd5eee;
+
+.boton {
+    font-size: 40px;
+    color: #009943;
+    padding: 8px 100px;
+    border-radius: 15px;
+    background-color: #ACF4CB;
+    border: 1px solid #7EE7AC;
+    transition: all 1s;
+    box-shadow: 6px 6px 12px #0AC25A, -6px -6px 12px #51D88C;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.boton:hover {
+    box-shadow: -6px -6px 12px #dd5eee, 6px 6px 12px #51D88C;
+    color: #dd5eee;
 }

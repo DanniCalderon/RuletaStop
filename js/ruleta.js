@@ -37,7 +37,7 @@ var miRuleta = new Winwheel({
         { 'fillStyle': '#6c5ce7', 'text': " W  w" },
         { 'fillStyle': '#ffeaa7', 'text': " X  x" },
         { 'fillStyle': '#fab1a0', 'text': " Y  y" },
-        { 'fillStyle': '#ff7675', 'text': " Z  z" } 
+        { 'fillStyle': '#ff7675', 'text': " Z  z" }
     ],
     'animation': {
         'type': 'spinToStop',
@@ -111,7 +111,7 @@ function resetGame() {
         var botton = document.querySelector(".botonFinal");
         botton.addEventListener("click", function () {
             window.location.reload();
-        } );
+        });
         botton.value = "Reiniciar ruleta";
         var letra = document.querySelector(".letra");
         document.querySelector(".mensajeFinal").style.display = "block";
@@ -119,7 +119,7 @@ function resetGame() {
         miRuleta.deleteSegment(miRuleta.getIndicatedSegmentNumber());
         miRuleta.draw();
         letra.innerHTML = "Z  z".split(' ').join('').charAt(0);
-        
+
     } else {
 
         if (estado == false) {
